@@ -26,17 +26,20 @@ This repository provides a simple, privacy-respecting way to collect user feedba
 
 ```
 /apps_feedback.io
-├── index.html           # Landing page listing all apps
-├── todoguard.html       # TodoGuard feedback page
-├── cleanupguard.html    # CleanupGuard App feedback page
+├── index.html              # Landing page listing all apps
+├── todoguard/
+│   ├── index.html          # TodoGuard feedback page
+│   └── privacy.html        # TodoGuard privacy policy
+├── cleanupguard/
+│   └── index.html          # CleanupGuard feedback page
 ├── css/
-│   └── styles.css       # Shared styles
+│   └── styles.css          # Shared styles
 ├── js/
-│   ├── content.js       # Centralized content configuration
-│   └── feedback.js      # Formspree AJAX handler with spam prevention
+│   ├── content.js          # Centralized content configuration
+│   └── feedback.js         # Formspree AJAX handler with spam prevention
 ├── content/
-│   └── Contact_page.md  # Design reference document
-└── README.md            # This file
+│   └── Contact_page.md     # Design reference document
+└── README.md               # This file
 ```
 
 ## How to Add a New App Feedback Page
@@ -45,20 +48,22 @@ This repository provides a simple, privacy-respecting way to collect user feedba
    ```javascript
    // In the apps array:
    {
-       id: 'myapp',           // URL slug (myapp.html)
+       id: 'myapp',           // URL slug (myapp/ folder)
        name: 'MyApp',         // Display name
        tagline: 'Your app description'
    }
    ```
 
-2. **Copy an existing page** (e.g., `todoguard.html`)
+2. **Create a folder** with the app id (e.g., `myapp/`)
 
-3. **Rename it** to match the app id (e.g., `myapp.html`)
+3. **Copy an existing page** (e.g., `todoguard/index.html`) into the new folder
 
 4. **Update only these items**:
    - `<title>` tag to "MyApp App Support"
    - `<meta name="description">` with your app description
    - `data-app-id` attribute on `<body>` to `"myapp"`
+
+5. **(Optional)** Add a `privacy.html` file if needed
 
 That's it! All other content (labels, intro text, etc.) is loaded dynamically from `content.js`.
 

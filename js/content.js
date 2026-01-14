@@ -76,7 +76,7 @@ var APP_CONTENT = {
     /* ========================================
        App Registry
        Define all apps here. Each app needs:
-       - id: URL slug (e.g., 'todoguard' for todoguard.html)
+       - id: URL slug (e.g., 'todoguard' for todoguard/ folder)
        - name: Display name
        - tagline: Short description shown in sidebar and app list
        ======================================== */

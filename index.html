@@ -72,7 +72,7 @@
             APP_CONTENT.apps.forEach(function (app) {
                 var li = document.createElement('li');
                 var a = document.createElement('a');
-                a.href = app.id + '.html';
+                a.href = app.id + '/';
                 a.textContent = app.name;
                 var span = document.createElement('span');
                 span.textContent = ' — ' + app.tagline;
